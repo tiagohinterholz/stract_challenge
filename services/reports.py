@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Blueprint, Response
+from flask import Blueprint, Response, jsonify
 from services.api import fetch_data
 
 reports_bp = Blueprint("reports", __name__)

@@ -4,11 +4,11 @@ from routes.platforms import platforms_bp
 from routes.accounts import accounts_bp
 from routes.fields import fields_bp
 from routes.insights import insights_bp
-from routes.views_platform import views_platform_bp
-from routes.views_summary import views_summary_bp
 from routes.reports import reports_bp
-from routes.views_general import views_general_bp
-from routes.views_general_summary import views_general_summary_bp
+from views.views_platform import views_platform_bp
+from views.views_summary import views_summary_bp
+from views.views_general import views_general_bp
+from views.views_general_summary import views_general_summary_bp
 
 
 app = Flask(__name__)

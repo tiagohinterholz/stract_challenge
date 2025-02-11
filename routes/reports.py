@@ -4,7 +4,7 @@ from services.api import fetch_data
 
 reports_bp = Blueprint("reports", __name__)
 
-@reports_bp.route("/<platform>", methods=["GET"])
+@reports_bp.route("/reports/<platform>", methods=["GET"])
 def export_platform_csv(platform):
     """Gera um relatório CSV com todos os anúncios de uma plataforma específica."""
 
@@ -21,7 +21,12 @@ def export_platform_csv(platform):
     accounts_data = fetch_data("accounts", {"platform": platform_value})["accounts"]
 
     all_insights = []
-    fields = "clicks,impressions,spend"
+    
+    fields_db = fetch_data("fields", {"platform": platform_value})
+    if "error" in fields_db:
+        return {"error": f"Erro ao buscar campos para {platform}"}, 500
+    
+    fields = ",".join([field["value"] for field in fields_db.get("fields", [])])
 
     for account in accounts_data:
         insights = fetch_data("insights", {

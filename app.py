@@ -7,6 +7,8 @@ from routes.insights import insights_bp
 from routes.views_platform import views_platform_bp
 from routes.views_summary import views_summary_bp
 from routes.reports import reports_bp
+from routes.views_general import views_general_bp
+from routes.views_general_summary import views_general_summary_bp
 
 
 app = Flask(__name__)
@@ -19,6 +21,8 @@ app.register_blueprint(fields_bp)
 app.register_blueprint(insights_bp)
 app.register_blueprint(views_platform_bp)
 app.register_blueprint(views_summary_bp)
+app.register_blueprint(views_general_bp)
+app.register_blueprint(views_general_summary_bp)
 app.register_blueprint(reports_bp)
 
 

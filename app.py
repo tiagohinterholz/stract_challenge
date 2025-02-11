@@ -4,8 +4,10 @@ from routes.platforms import platforms_bp
 from routes.accounts import accounts_bp
 from routes.fields import fields_bp
 from routes.insights import insights_bp
+from routes.views_platform import views_platform_bp
+from routes.views_summary import views_summary_bp
 from routes.reports import reports_bp
-from routes.views import views_bp
+
 
 app = Flask(__name__)
 
@@ -15,8 +17,10 @@ app.register_blueprint(platforms_bp)
 app.register_blueprint(accounts_bp)
 app.register_blueprint(fields_bp)
 app.register_blueprint(insights_bp)
+app.register_blueprint(views_platform_bp)
+app.register_blueprint(views_summary_bp)
 app.register_blueprint(reports_bp)
-app.register_blueprint(views_bp)
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

@@ -2,19 +2,19 @@ import pandas as pd
 from flask import Blueprint, render_template, jsonify
 from services.api import fetch_data
 
-views_bp = Blueprint("views", __name__, template_folder="stract_api/templates")
+views_platform_bp = Blueprint("views_platform", __name__, template_folder="stract_api/templates")
 
-PLATFROM_MAPPING = {
+PLATFORM_MAPPING = {
     "facebook": "meta_ads",
     "google": "ga4",
     "tiktok": "tiktok_insights"
 }
 
-@views_bp.route("/<platform>", methods=["GET"])
+@views_platform_bp.route("/<platform>", methods=["GET"])
 def display_platform_table(platform):
     """Exibe a tabela HTML com todos anúncios da plataforma especificada na rota"""
     
-    platform_value = PLATFROM_MAPPING.get(platform.lower())
+    platform_value = PLATFORM_MAPPING.get(platform.lower())
     if not platform_value:
         return jsonify({"error": "Plataforma inválida. Use: facebook, google ou tiktok."}), 400
     

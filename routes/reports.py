@@ -4,7 +4,7 @@ from services.api import fetch_data
 
 reports_bp = Blueprint("reports", __name__)
 
-@reports_bp.route("/reports/<platform>", methods=["GET"])
+@reports_bp.route("/export/<platform>", methods=["GET"])
 def export_platform_csv(platform):
     """Gera um relatório CSV com todos os anúncios de uma plataforma específica."""
 

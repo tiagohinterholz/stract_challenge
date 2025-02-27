@@ -98,7 +98,7 @@ curl -X GET http://127.0.0.1:5000/export/facebook
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Seu Nome**  
+Desenvolvido por **Tiago F. Hinterholz**  
 🔗 [LinkedIn](https://www.linkedin.com/in/tiago-hinterholz)  
 🔗 [GitHub](https://github.com/tiagohinterholz)  
 
